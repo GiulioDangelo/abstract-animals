@@ -7,8 +7,15 @@ public class Main {
         Eagle eagle = new Eagle();
         Dolphin  dolphin = new Dolphin();
 
-        faiVolare(sparrow);
-        faiNuotare(dolphin);
+        Animal[] list = {dog, sparrow, eagle, dolphin};
+
+        for (Animal animal : list) {
+            if (animal instanceof CanFly){
+                faiVolare((CanFly) animal);
+            } else if (animal instanceof CanSwim) {
+                faiNuotare((CanSwim) animal);
+            }
+        }
     }
 
     public static void faiVolare(CanFly animal){
